@@ -3,6 +3,7 @@ import 'package:get_it/get_it.dart';
 import 'package:marveldex/data/services/client/characters_client.dart';
 import 'package:marveldex/data/services/client/characters_client_local.dart';
 import 'package:marveldex/data/services/dio/dio_manager.dart';
+import 'package:marveldex/ui/pages/details/bloc/details_bloc.dart';
 import 'package:marveldex/ui/pages/home/bloc/home_bloc.dart';
 
 final getIt = GetIt.instance;
@@ -31,5 +32,6 @@ class Application {
     getIt.registerFactory<HomeBloc>(
       () => HomeBloc(characterClient: getIt<CharactersClientLocal>()),
     );
+    getIt.registerFactory<DetailsBloc>(() => DetailsBloc());
   }
 }
