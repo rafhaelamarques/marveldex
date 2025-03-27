@@ -1,26 +1,31 @@
 import 'package:marveldex/data/model/character.dart';
-import 'package:marveldex/data/services/dio/dio_creator.dart';
-import 'package:retrofit/retrofit.dart';
+import 'package:marveldex/data/services/client/characters_client_interface.dart';
+import 'package:marveldex/data/services/dio/dio_manager.dart';
 
-part 'characters_client.g.dart';
+class CharactersClient implements CharactersClientInterface {
+  final DioManager dio;
+  CharactersClient({required this.dio});
 
-@RestApi()
-abstract class CharactersClient {
-  factory CharactersClient() {
-    var dio = DioCreator.instance.generateMarvelUrl();
+  @override
+  Future<List<Character>> getCharacters({int offset = 0}) async {
+    final response = await dio.get(
+      '/characters'
+      '?offset=$offset',
+    );
 
-    return _CharactersClient(dio);
+    final data = response.data['data']['results'] as List;
+    return data.map((e) => Character.fromJson(e)).toList();
   }
 
-  @GET('/characters')
-  Future<List<Character>> getCharacters({
-    @Query('limit') int limit = 20,
-    @Query('offset') int offset = 0,
-    @Query('nameStartsWith') String? nameStartsWith,
-  });
+  @override
+  Future<Character?> getCharacterById(int characterId) async {
+    final response = await dio.get('/characters/$characterId');
+    final data = response.data['data']['results'] as List;
 
-  @GET('/characters/{characterId}')
-  Future<Character> getCharacterById({
-    @Path('characterId') required int characterId,
-  });
+    if (data.isEmpty) {
+      return null;
+    }
+
+    return Character.fromJson(data.first);
+  }
 }
