@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:marveldex/core/styles/app_styles.dart';
 import 'package:marveldex/data/model/character.dart';
 import 'package:marveldex/ui/widgets/cached_image.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class CharacterHorizontalCard extends StatelessWidget {
   final Character character;
@@ -25,7 +24,7 @@ class CharacterHorizontalCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(8),
           boxShadow: [
             BoxShadow(
-              blurRadius: 4,
+              blurRadius: 8,
               spreadRadius: 2,
               color: AppStyles.grey.withValues(alpha: 0.6),
               offset: const Offset(0, 2),
@@ -38,11 +37,19 @@ class CharacterHorizontalCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             spacing: 8,
             children: [
-              ClipOval(
-                child: CachedImage(
-                  imageUrl: character.thumbnail.url,
-                  size: const Size(150, 150),
-                  fit: BoxFit.cover,
+              Container(
+                height: 150,
+                width: 150,
+                decoration: BoxDecoration(
+                  border: Border.all(color: AppStyles.lightRed, width: 2),
+                  borderRadius: BorderRadius.circular(75),
+                ),
+                child: ClipOval(
+                  child: CachedImage(
+                    imageUrl: character.thumbnail.url,
+                    size: const Size(150, 150),
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
               Expanded(
@@ -57,20 +64,6 @@ class CharacterHorizontalCard extends StatelessWidget {
                       style: AppStyles.body.copyWith(color: AppStyles.darkGrey),
                       maxLines: 3,
                       overflow: TextOverflow.ellipsis,
-                    ),
-                    Align(
-                      alignment: Alignment.bottomRight,
-                      child: TextButton(
-                        onPressed: onTap,
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Text('Ver mais'),
-                            Icon(MdiIcons.chevronRight, size: 24),
-                          ],
-                        ),
-                      ),
                     ),
                   ],
                 ),
