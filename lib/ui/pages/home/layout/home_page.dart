@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:marveldex/core/application.dart';
 import 'package:marveldex/core/styles/app_styles.dart';
 import 'package:marveldex/data/model/character.dart';
+import 'package:marveldex/ui/pages/details/layout/details_page.dart';
 import 'package:marveldex/ui/pages/home/bloc/home_bloc.dart';
 import 'package:marveldex/ui/pages/home/components/character_horizontal_card.dart';
 import 'package:marveldex/ui/pages/home/components/character_vertical_card.dart';
@@ -60,8 +61,16 @@ class _HomePresentationState extends State<HomePresentation> {
   List<Widget> _generateTopWidgets(List<Character> characters) {
     return characters
         .map(
-          (character) =>
-              CharacterVerticalCard(character: character, onTap: () {}),
+          (character) => CharacterVerticalCard(
+            character: character,
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => DetailsPage(character: character),
+                ),
+              );
+            },
+          ),
         )
         .toList();
   }
@@ -70,8 +79,16 @@ class _HomePresentationState extends State<HomePresentation> {
   List<Widget> _generateBottomWidgets(List<Character> characters) {
     return characters
         .map(
-          (character) =>
-              CharacterHorizontalCard(character: character, onTap: () {}),
+          (character) => CharacterHorizontalCard(
+            character: character,
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => DetailsPage(character: character),
+                ),
+              );
+            },
+          ),
         )
         .toList();
   }
