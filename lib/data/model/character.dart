@@ -8,6 +8,7 @@ part 'character.g.dart';
 
 @Freezed()
 abstract class Character with _$Character {
+  const Character._();
   const factory Character({
     required int id,
     required String name,
@@ -22,4 +23,7 @@ abstract class Character with _$Character {
 
   factory Character.fromJson(Map<String, dynamic> json) =>
       _$CharacterFromJson(json);
+
+  String get info =>
+      description.isEmpty ? 'No character informantion.' : description;
 }

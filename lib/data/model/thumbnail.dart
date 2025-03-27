@@ -5,9 +5,12 @@ part 'thumbnail.g.dart';
 
 @Freezed()
 abstract class Thumbnail with _$Thumbnail {
+  const Thumbnail._();
   const factory Thumbnail({required String path, required String extension}) =
       _Thumbnail;
 
   factory Thumbnail.fromJson(Map<String, dynamic> json) =>
       _$ThumbnailFromJson(json);
+
+  String get url => '$path.$extension';
 }
