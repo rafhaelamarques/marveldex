@@ -1,16 +1,13 @@
-import 'package:json_annotation/json_annotation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
+part 'thumbnail.freezed.dart';
 part 'thumbnail.g.dart';
 
-@JsonSerializable()
-class Thumbnail {
-  String path;
-  String extension;
-
-  Thumbnail({required this.path, required this.extension});
+@Freezed()
+abstract class Thumbnail with _$Thumbnail {
+  const factory Thumbnail({required String path, required String extension}) =
+      _Thumbnail;
 
   factory Thumbnail.fromJson(Map<String, dynamic> json) =>
       _$ThumbnailFromJson(json);
-
-  Map<String, dynamic> toJson() => _$ThumbnailToJson(this);
 }

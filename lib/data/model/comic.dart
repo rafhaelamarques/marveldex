@@ -1,17 +1,14 @@
-import 'package:json_annotation/json_annotation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'item.dart';
 
+part 'comic.freezed.dart';
 part 'comic.g.dart';
 
-@JsonSerializable()
-class Comic {
-  int available;
-  List<Item> items;
-
-  Comic({required this.available, required this.items});
+@Freezed()
+abstract class Comic with _$Comic {
+  const factory Comic({required int available, required List<Item> items}) =
+      _Comic;
 
   factory Comic.fromJson(Map<String, dynamic> json) => _$ComicFromJson(json);
-
-  Map<String, dynamic> toJson() => _$ComicToJson(this);
 }
