@@ -25,13 +25,8 @@ class HomePage extends StatelessWidget {
               initial: () => const Center(child: SizedBox()),
               loading: () => HomeShimmer(),
               success: () => HomePresentation(characters: state.characters),
-              failure:
-                  () => const Center(
-                    child: Text('Erro ao carregar os personagens'),
-                  ),
-              empty:
-                  () =>
-                      const Center(child: Text('Nenhum personagem encontrado')),
+              failure: () => Center(child: Text(state.errorMessage)),
+              empty: () => Center(child: Text(state.errorMessage)),
             );
           },
         ),
