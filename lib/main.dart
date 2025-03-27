@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:marveldex/core/application.dart';
-import 'package:marveldex/core/styles/colors.dart';
+import 'package:marveldex/core/styles/app_styles.dart';
 import 'package:marveldex/ui/pages/splash/splash_page.dart';
 
 Future<void> main() async {
@@ -19,7 +19,7 @@ class MarvelDexApp extends StatelessWidget {
     return MaterialApp(
       title: 'MarvelDex',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: AppColors.midRed),
+        colorScheme: ColorScheme.fromSeed(seedColor: AppStyles.midRed),
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,

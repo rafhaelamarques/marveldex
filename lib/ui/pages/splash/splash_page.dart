@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:marveldex/core/styles/colors.dart';
+import 'package:marveldex/core/styles/app_styles.dart';
 import 'package:marveldex/core/styles/images.dart';
 import 'package:marveldex/ui/pages/home/layout/home_page.dart';
 
@@ -38,7 +38,7 @@ class _SplashPageState extends State<SplashPage> {
           Positioned(
             bottom: 50,
             child: CircularProgressIndicator(
-              valueColor: AlwaysStoppedAnimation<Color>(AppColors.white),
+              valueColor: AlwaysStoppedAnimation<Color>(AppStyles.white),
             ),
           ),
         ],
