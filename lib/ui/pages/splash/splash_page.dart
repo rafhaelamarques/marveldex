@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:marveldex/core/styles/app_styles.dart';
 import 'package:marveldex/core/styles/images.dart';
-import 'package:marveldex/ui/pages/home/layout/home_page.dart';
+import 'package:marveldex/ui/pages/home/view/home_page.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
