@@ -43,6 +43,9 @@ Siga as instruções do portal [Marvel Developer](https://developer.marvel.com/d
 
 Renomeie o arquivo .env.example para .env e preencha de acordo.
 
+## APK for Android Devices
+[app-release.apk](/assets/app-release.apk)
+
 ## Authors
 
 > [Rafhaela Marques](https://www.linkedin.com/in/rafhaela-marques/)
