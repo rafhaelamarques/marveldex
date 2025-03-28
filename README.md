@@ -4,7 +4,7 @@ Seu catálogo de heróis.
 
 ## Description
 
-O MarvelDex foi desenvolvido pensando em apresentar informações rápidas e básicas sobre heróis Marvel, como descrição, apracições em quadrinhos e animações.
+O MarvelDex foi desenvolvido pensando em apresentar informações rápidas e básicas sobre heróis Marvel, como descrição, aparições em quadrinhos e animações.
 
 O app é desenvolvido em Flutter 3.27 pensado para iOS e Android. As principais bibliotecas utilizadas são:
 
