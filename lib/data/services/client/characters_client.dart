@@ -6,18 +6,14 @@ class CharacterRequestFailure implements Exception {
   final String message = 'Character request failed';
 
   @override
-  String toString() {
-    return message;
-  }
+  String toString() => message;
 }
 
 class CharacterNotFoundFailure implements Exception {
   final String message = 'Character not found';
 
   @override
-  String toString() {
-    return message;
-  }
+  String toString() => message;
 }
 
 class CharactersClient implements CharactersClientInterface {

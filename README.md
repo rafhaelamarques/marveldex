@@ -8,13 +8,13 @@ O MarvelDex foi desenvolvido pensando em apresentar informações rápidas e bá
 
 O app é desenvolvido em Flutter 3.27 pensado para iOS e Android. As principais bibliotecas utilizadas são:
 
-- BLoC para gerenciamento de estados;
-- Freezed para controle de boilerplate;
-- Dio para requisições REST;
-- GetIt para injeção de dependências;
-- CachedNetworkImage para cache de imagens;
-- DotEnv para carregamento de variáveis de ambiente;
-- Mocktail para mocks nos testes unitários.
+- [BLoC](https://pub.dev/packages/flutter_bloc) para gerenciamento de estados;
+- [Freezed](https://pub.dev/packages/freezed) para controle de boilerplate;
+- [Dio](https://pub.dev/packages/dio) para requisições REST;
+- [GetIt](https://pub.dev/packages/get_it) para injeção de dependências;
+- [CachedNetworkImage](https://pub.dev/packages/cached_network_image) para cache de imagens;
+- [DotEnv](https://pub.dev/packages/flutter_dotenv) para carregamento de variáveis de ambiente;
+- [Mocktail](https://pub.dev/packages/mocktail) para mocks nos testes unitários.
 
 A API utilizada é a [Marvel API](https://developer.marvel.com/documentation/generalinfo).
 

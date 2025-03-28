@@ -1,5 +1,6 @@
 part of 'details_bloc.dart';
 
+@immutable
 sealed class DetailsEvent extends Equatable {
   const DetailsEvent();
 

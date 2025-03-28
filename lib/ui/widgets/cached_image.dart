@@ -6,12 +6,10 @@ class CachedImage extends StatelessWidget {
   final String? imageUrl;
   final BoxFit? fit;
   final FilterQuality filterQuality;
-  final PlaceholderWidgetBuilder? placeHolder;
   final Size? size;
 
   const CachedImage({
     required this.imageUrl,
-    this.placeHolder,
     this.size,
     this.filterQuality = FilterQuality.high,
     this.fit,
@@ -30,7 +28,6 @@ class CachedImage extends StatelessWidget {
     return CachedNetworkImage(
       filterQuality: filterQuality,
       imageUrl: imageUrl ?? '',
-      placeholder: placeHolder,
       fit: fit,
       height: size?.height,
       width: size?.width,
