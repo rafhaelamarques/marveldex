@@ -30,7 +30,7 @@ class Application {
   static Future<void> _blocsSetup() async {
     // Registro de blocs com bindings
     getIt.registerFactory<HomeBloc>(
-      () => HomeBloc(characterClient: getIt<CharactersClient>()),
+      () => HomeBloc(characterClient: getIt<CharactersClientLocal>()),
     );
     getIt.registerFactory<DetailsBloc>(() => DetailsBloc());
   }
