@@ -30,12 +30,13 @@ class HomeState extends Equatable {
   }
 }
 
-enum HomeStatus { initial, loading, success, failure, empty }
+enum HomeStatus { initial, loading, success, failure, empty, fetchingMore }
 
 extension HomeStatusX on HomeStatus {
   T when<T>({
     required T Function() initial,
     required T Function() loading,
+    required T Function() fetchingMore,
     required T Function() success,
     required T Function() failure,
     required T Function() empty,
@@ -45,6 +46,8 @@ extension HomeStatusX on HomeStatus {
         return initial();
       case HomeStatus.loading:
         return loading();
+      case HomeStatus.fetchingMore:
+        return fetchingMore();
       case HomeStatus.success:
         return success();
       case HomeStatus.failure:

@@ -24,7 +24,9 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     Emitter<HomeState> emit, {
     int offset = 0,
   }) async {
-    emit(state.copyWith(status: HomeStatus.loading));
+    offset == 0
+        ? emit(state.copyWith(status: HomeStatus.loading))
+        : emit(state.copyWith(status: HomeStatus.fetchingMore));
 
     try {
       final characters = await characterClient.getCharacters(offset: offset);

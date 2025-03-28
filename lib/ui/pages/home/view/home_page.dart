@@ -24,6 +24,8 @@ class HomePage extends StatelessWidget {
             return state.status.when(
               initial: () => const Center(child: SizedBox()),
               loading: () => HomeShimmer(),
+              fetchingMore:
+                  () => HomePresentation(characters: state.characters),
               success: () => HomePresentation(characters: state.characters),
               failure: () => Center(child: Text(state.errorMessage)),
               empty: () => Center(child: Text(state.errorMessage)),
