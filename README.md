@@ -20,7 +20,7 @@ A API utilizada é a [Marvel API](https://developer.marvel.com/documentation/gen
 
 
 ## Screens
-![Home Page](/assets/screenshots/home_1.png) ![Home Page](/assets/screenshots/home_2.png) ![Details Page](/assets/screenshots/details.png)
+![Screenshots de telas principais](/assets/screenshots/collage.png)
 
 
 ## Getting Started
