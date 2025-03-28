@@ -36,7 +36,7 @@ Antes de executar o projeto, rode os seguintes comandos
 flutter pub get
 ```
 ```
-flutter run build_runner build --delete-conflicting-outputs
+dart run build_runner build
 ```
 
 Siga as instruções do portal [Marvel Developer](https://developer.marvel.com/documentation/authorization) para gerar sua autenticação.
